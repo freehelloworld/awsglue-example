@@ -24,7 +24,7 @@ df = glueContext.create_dynamic_frame_from_options("redshift", connection_option
 ```
 
 ## Architecture graph
-In a real work application, if the data is already in data warehouse, we recommend ELT rather than ETL, which will save the effort (money and time) of getting data out of database.
+If the data is already in data warehouse, I recommend in-database transformation (ELT) rather than ETL, which will save the effort (money and time) of getting data out of database.
 
 However, the purpose of this work is to show how Glue spark talks to Redshift. 
 ![Architecture](./glue_etl.png)
