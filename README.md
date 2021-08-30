@@ -6,7 +6,7 @@ The input data is json string, with struct or array as field. The main goal is t
 ## Things to highlight
 1. Glue ETL is serverless and scalable, which is good properties for handling big data.
 2. For the requirement of `convert into a flat table`, the only array field is `brand_ids`, so it's mainly about `exploding` the field. 
-3. As we don't have context information of the input data warehouse table, we load the whole table into Glue ETL. In real world application, we should only load new data or incremental data. A simple way could be using a timestamp field as flag to load data after certain time point. Here is a code sample:
+3. As we don't have context information of the input data warehouse table, we load the whole table into Glue ETL. In real world application, we should only load new data or incremental data. A simple way could be using a timestamp field as flag to load data after certain time point. Here is a code sample of using query to load incremental data only:
 
 ```
 query = "select * from <table_schema>.<table_name> where timestamp > '2021-08-01'"
