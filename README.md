@@ -4,7 +4,7 @@ This is an example of how to use Glue spark to read data from Redshift and run s
 The input data is json string, with struct or array as field. The main goal is to flatten the data, so that the result is in tabular shape.
 
 ## Things to highlight
-1. Glue ETL is serverless and scalable, which is good properties for handling big data.
+1. Glue ETL is serverless and scalable, which are good properties for handling big data. Moreover, it is easy to run, so we choose it for this task.
 2. For the requirement of `convert into a flat table`, the only array field is `brand_ids`, so it's mainly about `exploding` the field. 
 3. As we don't have context information of the input data warehouse table, we load the whole table into Glue ETL. In real world application, we should only load new data or incremental data. A simple way could be using a timestamp field as flag to load data after certain time point. Here is a code sample of using query to load incremental data only:
 
